@@ -1,6 +1,20 @@
+/*
+Caesar Cipher Simulation
+Author: Bruno D'Agostino
+Date: August 24, 2019
+
+Details: This file holds the code necessary to actually run the Caesar Cipher simulation. It implements a command line
+ interface to operate the encryption process.
+
+Specifications: In particular, this class implements the 2 keys Caesar Cipher.
+ */
+// imports.
 package com.dagostino.cipher;
 
 public class CaesarCipherTwo {
+    /*
+    This class will bring together components to create an actual 2 keys Caesar Cipher.
+     */
     private String alphabet;
     private String shiftedAlphabet1;
     private String shiftedAlphabet2;
@@ -32,6 +46,9 @@ public class CaesarCipherTwo {
          */
         StringBuilder cipher = new StringBuilder(message);
 
+        // TODO
+        // Test the message string to make sure it only contains a-zA-Z
+
         int i = 0;
         while (i < cipher.length()) {
             char currChar = cipher.charAt(i);
@@ -45,6 +62,9 @@ public class CaesarCipherTwo {
     }
 
     public String decipher(String message) {
+        /*
+        Decryption == Encryption(26 - key1, 26 - key2).
+         */
         CaesarCipherTwo cc = new CaesarCipherTwo(26 - this.key1, 26 - this.key2);
 
         return cc.encipher(message);
@@ -55,6 +75,9 @@ public class CaesarCipherTwo {
         Takes a letter as input and returns letter output.
          */
         char newChar = 0;
+
+        // TODO
+        // Make sure the letter is in a-zA-Z.
 
         int idx;
         if (Character.isLowerCase(letter)) {

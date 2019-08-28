@@ -12,6 +12,9 @@ Specifications: In particular, this class implements the 1 key Caesar Cipher.
 package com.dagostino.cipher;
 
 public class CaesarCipher {
+    /*
+    This class will bring together components to create an actual Caesar Cipher.
+     */
     private String alphabet;
     private String shiftedAlphabet;
     private int key;
@@ -22,6 +25,7 @@ public class CaesarCipher {
 
         key1 = One integer number specifying the shift for the alphabet.
          */
+        // Set the alphabet, shifted alphabet and key.
         this.alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         this.shiftedAlphabet = this.shiftAlphabet(key);
         this.key = key;
@@ -37,6 +41,9 @@ public class CaesarCipher {
          */
         StringBuilder cipher = new StringBuilder(message);
 
+        // TODO
+        // Test the message string to make sure it only contains a-zA-Z
+
         int i = 0;
         while (i < cipher.length()) {
             char currChar = cipher.charAt(i);
@@ -50,6 +57,9 @@ public class CaesarCipher {
     }
 
     public String decipher(String message) {
+        /*
+        Decryption == Encryption(26 - key).
+         */
         CaesarCipher cc = new CaesarCipher(26 - this.key);
 
         return cc.encipher(message);
@@ -60,6 +70,9 @@ public class CaesarCipher {
         Takes a letter as input and returns letter output.
          */
         char newChar = 0;
+
+        // TODO
+        // Make sure the letter is in a-zA-Z.
 
         int idx;
         if (Character.isLowerCase(letter)) {
