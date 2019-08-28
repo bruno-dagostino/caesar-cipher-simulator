@@ -69,10 +69,8 @@ public class Simulator {
         String choice;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Caesar Cipher panel!");
+        System.out.println("Welcome to the Caesar Cipher panel!\n");
         printMenu();
-
-        scanner.reset();
 
         do {
             System.out.print("\nEnter your option: ");
